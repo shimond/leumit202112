@@ -1,0 +1,14 @@
+.main-wrapper {
+    display: grid;
+    min-height: 60vh;
+    grid-template-columns: 2fr 1fr;
+
+    .products {
+        .product-item {
+            margin-bottom: 4px;
+            border: 1px solid black;
+        }
+    }
+
+    .orders {}
+}

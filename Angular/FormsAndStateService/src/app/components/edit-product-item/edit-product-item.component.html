@@ -1,0 +1,17 @@
+<div class="wrapper" [formGroup]="editForm">
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Product name</mat-label>
+            <input formControlName="name" matInput placeholder="productName">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Product price</mat-label>
+            <input formControlName="price" matInput type="number" placeholder="price">
+        </mat-form-field>
+    </div>
+    <div>
+        <span>{{editForm.value.bmi}}</span>
+    </div>
+</div>

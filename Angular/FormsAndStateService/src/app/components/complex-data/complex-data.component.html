@@ -1,0 +1,31 @@
+<div class="main-wrapper" *ngIf="fullData$ | async as fData"
+     [formGroup]="bigForm">
+    <div class="products">
+        <h2>Products</h2>
+        <div *ngIf="fData.products as products">
+            <h3>Total products : {{products.length}}</h3>
+            <app-edit-product-list formControlName="products"></app-edit-product-list>
+        </div>
+    </div>
+    <div class="orders">
+        <h2>Orders</h2>
+        <div *ngIf="orders$ | async as orders">
+            <h3>Total Ordrs : {{orders.length}}</h3>
+            <!-- <app-edit-order-list formControlName="orders"></app-edit-order-list> -->
+        </div>
+    </div>
+</div>
+<div>
+    <button mat-raised-button (click)="save()" [disabled]="bigForm.invalid">Save all</button>
+</div>
+<div style="display: grid;grid-template-columns: 1fr 1fr;">
+    <div>
+        <pre>{{fullData$ | async | json}}</pre>
+    </div>
+    <div>
+        <pre>{{editData$ | async | json}}</pre>
+    </div>
+</div>
+<ng-template #loadingTemplate>
+    <h1>Loading....</h1>
+</ng-template>

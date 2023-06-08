@@ -1,0 +1,11 @@
+<div style="margin-bottom: 24px;">
+    <div style="margin-bottom: 44px;">
+        <div *ngFor="let item of productsArray.controls;let index=index"
+        style="margin-bottom: 44px;"
+        >
+            <app-edit-product-item [formControl]="item"></app-edit-product-item>
+            <button mat-raised-button color="warn" (click)="removeItem(index)">Remove product</button>
+        </div>
+    </div>
+    <button mat-raised-button color="primary" (click)="addItem()">Add Product</button>
+</div>
